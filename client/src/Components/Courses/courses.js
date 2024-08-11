@@ -17,6 +17,23 @@ import fullstack3 from "./images/fullstack3.png";
 // Videos
 import reactVideo1 from "./Videos/react1.mp4";
 import reactVideo2 from "./Videos/react2.mp4";
+import reactVideo3 from "./Videos/react3.mp4";
+
+import jsVideo1 from "./Videos/js1.mp4";
+import jsVideo2 from "./Videos/js2.mp4";
+import jsVideo3 from "./Videos/js3.mp4";
+
+import backendVideo1 from "./Videos/back1.mp4";
+import backendVideo2 from "./Videos/back2.mp4";
+import backendVideo3 from "./Videos/back3.mp4";
+
+import cssVideo1 from "./Videos/css1.mp4";
+import cssVideo2 from "./Videos/css2.mp4";
+import cssVideo3 from "./Videos/css3.mp4";
+
+import fullstackVideo1 from "./Videos/full1.mp4";
+import fullstackVideo2 from "./Videos/full2.mp4";
+import fullstackVideo3 from "./Videos/full3.mp4";
 
 const courses = [
   {
@@ -72,6 +89,7 @@ const courses = [
     description:
       "A beginner-friendly course on React that covers the basics and essential concepts.",
     image: react3,
+    video: reactVideo3,
   },
   {
     id: 4,
@@ -87,6 +105,7 @@ const courses = [
     description:
       "Understand the core concepts of JavaScript, including ES6+ features, and asynchronous programming.",
     image: js1,
+    video: jsVideo1,
   },
   {
     id: 5,
@@ -102,6 +121,7 @@ const courses = [
     description:
       "Explore advanced JavaScript topics such as closures, prototypes, and functional programming.",
     image: js2,
+    video: jsVideo2,
   },
   {
     id: 6,
@@ -117,6 +137,7 @@ const courses = [
     description:
       "Learn modern JavaScript features and syntax introduced in ES6 and beyond.",
     image: js3,
+    video: jsVideo3,
   },
   {
     id: 7,
@@ -132,6 +153,7 @@ const courses = [
     description:
       "Learn the basics of server-side programming with Node.js and build your first API.",
     image: backend1,
+    video: backendVideo1,
   },
   {
     id: 8,
@@ -147,6 +169,7 @@ const courses = [
     description:
       "In-depth course on Python, covering middleware, routing, and integrating with databases.",
     image: backend2,
+    video: backendVideo2,
   },
   {
     id: 9,
@@ -162,6 +185,7 @@ const courses = [
     description:
       "Advanced topics in Node.js, including performance optimization, security, and scaling applications.",
     image: backend3,
+    video: backendVideo3,
   },
   {
     id: 10,
@@ -177,6 +201,7 @@ const courses = [
     description:
       "Get started with Tailwind CSS and learn how to create responsive and modern web designs.",
     image: css1,
+    video: cssVideo1,
   },
   {
     id: 11,
@@ -192,6 +217,7 @@ const courses = [
     description:
       "Explore advanced techniques in Tailwind CSS for creating complex and scalable web designs.",
     image: css2,
+    video: cssVideo2,
   },
   {
     id: 12,
@@ -207,6 +233,7 @@ const courses = [
     description:
       "Learn to create responsive and visually appealing designs using Tailwind CSS.",
     image: css3,
+    video: cssVideo3,
   },
   {
     id: 13,
@@ -222,6 +249,7 @@ const courses = [
     description:
       "Comprehensive course covering both frontend and backend development using JavaScript technologies.",
     image: fullstack1,
+    video: fullstackVideo1,
   },
   {
     id: 14,
@@ -237,21 +265,23 @@ const courses = [
     description:
       "Learn to build scalable full-stack applications with advanced topics in React, Node.js, and cloud services.",
     image: fullstack2,
+    video: fullstackVideo2,
   },
   {
     id: 15,
-    name: "Full-Stack Development with MERN",
+    name: "Full-Stack Development with Java",
     title: "Full Stack",
     instructor: "Olivia Brown",
     whatyouLearn: [
       "Master MongoDB, Express, React, and Node.js",
-      "Build full-stack applications with the MERN stack",
+      "Build full-stack applications with the Java stack",
       "Understand deployment strategies for full-stack apps",
     ],
     time: "11 weeks",
     description:
-      "A complete guide to building full-stack applications using the MERN stack (MongoDB, Express.js, React, Node.js).",
+      "A complete guide to building full-stack applications using the Java stack (Java, Spring Boot).",
     image: fullstack3,
+    video: fullstackVideo3,
   },
 ];
 
