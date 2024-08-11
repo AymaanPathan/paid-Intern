@@ -33,13 +33,10 @@ function Hero() {
           anywhere.
         </span>
         <div className="flex items-center justify-start gap-4">
-          <button className="bg-[#F7F9FF] lg:w-fit items-center gap-2 font-semibold text-black px-4 py-2 rounded-2xl">
-            Explore
-          </button>
           <div className="flex items-center text-gray-200  cursor-pointer">
             <Link
-              to={"/shop"}
-              className="hero-btn bg-[#1B2834] inline-flex items-center gap-2 font-semibold w-fit text-white py-2 px-6 rounded-md"
+              to={"/courses"}
+              className="hero-btn bg-[#f8f8f8] inline-flex items-center gap-2 font-semibold w-fit text-black py-2 px-6 rounded-md"
             >
               View all course
               <i className="fa fa-arrow-right hover:translate-x-1 duration-150 text-xl "></i>

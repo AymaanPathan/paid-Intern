@@ -3,9 +3,11 @@ import logo from "./logo.png";
 import menu from "./menu.png";
 import cross from "./close.png";
 import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -32,27 +34,45 @@ function Navbar() {
         />
 
         <div className="hidden relative left-4 md:flex flex-grow items-center justify-end  ">
-          <ul className="flex bg-white  text-black  gap-12 p-4 rounded-s-full">
-            <Link to="/" className="hover:brightness-95" onClick={toggleMenu}>
+          <ul className="flex bg-white  text-black  gap-10 p-4 rounded-s-full">
+            <Link
+              to="/"
+              className={`hover:brightness-95 ${
+                location.pathname === "/" ? "text-blue-500 font-semibold" : ""
+              } `}
+              onClick={toggleMenu}
+            >
               Home
             </Link>
             <Link
               to="/contact"
-              className="hover:brightness-95"
+              className={`hover:brightness-95 ${
+                location.pathname === "/contact"
+                  ? "text-blue-500 font-semibold"
+                  : ""
+              } `}
               onClick={toggleMenu}
             >
               Contact us
             </Link>
             <Link
               to="/about"
-              className="hover:brightness-95"
+              className={`hover:brightness-95 ${
+                location.pathname === "/about"
+                  ? "text-blue-500 font-semibold"
+                  : ""
+              } `}
               onClick={toggleMenu}
             >
               About Us
             </Link>
             <Link
               to="/courses"
-              className="hover:brightness-95"
+              className={`hover:brightness-95 ${
+                location.pathname === "/courses"
+                  ? "text-blue-500 font-semibold"
+                  : ""
+              } `}
               onClick={toggleMenu}
             >
               Course
@@ -78,26 +98,44 @@ function Navbar() {
           </button>
         </div>
         <div className="flex flex-col items-center space-y-4">
-          <Link to="/" className="hover:brightness-95" onClick={toggleMenu}>
+          <Link
+            to="/"
+            className={`hover:brightness-95 ${
+              location.pathname === "/" ? "text-blue-500 font-semibold" : ""
+            } `}
+            onClick={toggleMenu}
+          >
             Home
           </Link>
           <Link
             to="/contact"
-            className="hover:brightness-95"
+            className={`hover:brightness-95 ${
+              location.pathname === "/contact"
+                ? "text-blue-500 font-semibold"
+                : ""
+            } `}
             onClick={toggleMenu}
           >
             Contact us
           </Link>
           <Link
             to="/about"
-            className="hover:brightness-95"
+            className={`hover:brightness-95 ${
+              location.pathname === "/about"
+                ? "text-blue-500 font-semibold"
+                : ""
+            } `}
             onClick={toggleMenu}
           >
             About Us
           </Link>
           <Link
             to="/courses"
-            className="hover:brightness-95"
+            className={`hover:brightness-95 ${
+              location.pathname === "/courses"
+                ? "text-blue-500 font-semibold"
+                : ""
+            } `}
             onClick={toggleMenu}
           >
             Course
