@@ -1,27 +1,13 @@
-import Comment from "./Components/Comment/Comment";
-import Featured from "./Components/Featured/Featured";
-import Hero from "./Components/Hero/Hero";
-import Membership from "./Components/Membership/Membership";
-import Navbar from "./Components/Navbar/Navbar";
-import Testimonials from "./Components/Testimonials/Testimonials";
-import Footer from "./Components/Footer/Footer";
-import Courses from "./Components/Courses/Course";
+import { Routes, Route } from "react-router-dom";
+import Home from "./Components/Home/Home";
+import CourseDetail from "./Components/CourseDetail/CourseDetail";
 
 function App() {
   return (
-    <div>
-      <div className="bg-[url('./Components/Navbar/bg.png')] bg-cover bg-no-repeat">
-        <Navbar className="bg-[url('/navbar-bg.png')] bg-cover bg-no-repeat" />
-        <Hero className="bg-[url('/hero-bg.png')] bg-cover bg-no-repeat" />
-      </div>
-      <Comment />
-      <Featured />
-      <Courses />
-      <Testimonials />
-
-      <Membership />
-      <Footer />
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/course/:id" element={<CourseDetail />} />
+    </Routes>
   );
 }
 

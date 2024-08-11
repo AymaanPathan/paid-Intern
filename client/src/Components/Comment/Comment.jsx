@@ -2,7 +2,7 @@ import lady from "./lady.png";
 
 function Comment() {
   return (
-    <div className="p-6 md:p-12 mt-12 md:mt-24 flex flex-col md:flex-row items-center justify-between">
+    <div className="p-6  mt-12 flex flex-col md:flex-row items-center justify-between">
       <div className="flex-shrink-0 w-full md:w-[50%] flex justify-center">
         <img
           src={lady}

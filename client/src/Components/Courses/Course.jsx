@@ -12,6 +12,12 @@ export default function Courses() {
     setFilters(e.target.textContent);
     setActive(index);
   };
+  const handleClickToCourse = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
   useEffect(() => {
     let items = [];
@@ -75,10 +81,14 @@ export default function Courses() {
                   <div className="flex justify-start gap-4 items-center">
                     <p className="font-bold text-lg">Duration: {item.time}</p>
                   </div>
-                  <div>
-                    <button className="rounded-2xl text-white px-4 py-3 font-bold hover:bg-[#F7B500] duration-150 bg-[#1579E6] w-full mt-8">
-                      Start course
-                    </button>
+                  <div className="flex justify-center mt-8">
+                    <Link
+                      onClick={handleClickToCourse}
+                      to={`/course/${item.id}`}
+                      className="rounded-2xl text-white px-4 py-3 font-bold hover:bg-[#F7B500] duration-150 bg-[#1579E6] w-full"
+                    >
+                      View Detail
+                    </Link>
                   </div>
                 </div>
               </div>

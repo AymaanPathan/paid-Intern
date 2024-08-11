@@ -2,6 +2,7 @@ import { useState } from "react";
 import logo from "./logo.png";
 import menu from "./menu.png";
 import cross from "./close.png";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,7 +15,13 @@ function Navbar() {
     <nav className="relative">
       <div className="flex items-center justify-between p-4">
         <div className="flex items-center">
-          <img src={logo} className="w-24 h-24 cursor-pointer" alt="logo-img" />
+          <Link to={"/"}>
+            <img
+              src={logo}
+              className="w-24 h-24 cursor-pointer"
+              alt="logo-img"
+            />
+          </Link>
         </div>
 
         <img
@@ -24,12 +31,32 @@ function Navbar() {
           onClick={toggleMenu}
         />
 
-        <div className="hidden md:flex flex-grow items-center justify-end gap-12">
-          <ul className="flex bg-white text-black p-4 rounded-s-full">
-            <li className="cursor-pointer ml-2">Home</li>
-            <li className="cursor-pointer">Timing</li>
-            <li className="cursor-pointer">Latest</li>
-            <li className="cursor-pointer">Course</li>
+        <div className="hidden relative left-4 md:flex flex-grow items-center justify-end  ">
+          <ul className="flex bg-white  text-black  gap-12 p-4 rounded-s-full">
+            <Link to="/" className="hover:brightness-95" onClick={toggleMenu}>
+              Home
+            </Link>
+            <Link
+              to="/contact"
+              className="hover:brightness-95"
+              onClick={toggleMenu}
+            >
+              Contact us
+            </Link>
+            <Link
+              to="/about"
+              className="hover:brightness-95"
+              onClick={toggleMenu}
+            >
+              About Us
+            </Link>
+            <Link
+              to="/courses"
+              className="hover:brightness-95"
+              onClick={toggleMenu}
+            >
+              Course
+            </Link>
             <input
               type="text"
               placeholder="Search..."
@@ -41,7 +68,7 @@ function Navbar() {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed inset-0   h-72 rounded-lg lg:text-black bg-[#4340f7]  text-white p-4 transition-transform transform md:hidden ${
+        className={`fixed inset-0   h-72 rounded-b-xl lg:text-black bg-[#4340f7]  text-white p-4 transition-transform transform md:hidden ${
           isMenuOpen ? "translate-x-0" : "translate-x-full"
         } z-50`}
       >
@@ -51,18 +78,30 @@ function Navbar() {
           </button>
         </div>
         <div className="flex flex-col items-center space-y-4">
-          <a href="#" className="hover:brightness-95" onClick={toggleMenu}>
+          <Link to="/" className="hover:brightness-95" onClick={toggleMenu}>
             Home
-          </a>
-          <a href="#" className="hover:brightness-95" onClick={toggleMenu}>
-            Timing
-          </a>
-          <a href="#" className="hover:brightness-95" onClick={toggleMenu}>
-            Latest
-          </a>
-          <a href="#" className="hover:brightness-95" onClick={toggleMenu}>
+          </Link>
+          <Link
+            to="/contact"
+            className="hover:brightness-95"
+            onClick={toggleMenu}
+          >
+            Contact us
+          </Link>
+          <Link
+            to="/about"
+            className="hover:brightness-95"
+            onClick={toggleMenu}
+          >
+            About Us
+          </Link>
+          <Link
+            to="/courses"
+            className="hover:brightness-95"
+            onClick={toggleMenu}
+          >
             Course
-          </a>
+          </Link>
           <input
             type="text"
             placeholder="Search..."
