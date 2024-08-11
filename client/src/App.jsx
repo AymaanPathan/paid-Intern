@@ -5,6 +5,7 @@ import Membership from "./Components/Membership/Membership";
 import Navbar from "./Components/Navbar/Navbar";
 import Testimonials from "./Components/Testimonials/Testimonials";
 import Footer from "./Components/Footer/Footer";
+import Courses from "./Components/Courses/Course";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       </div>
       <Comment />
       <Featured />
+      <Courses />
       <Testimonials />
 
       <Membership />
