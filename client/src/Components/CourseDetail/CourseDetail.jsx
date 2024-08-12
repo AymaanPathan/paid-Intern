@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import courses from "../Courses/courses";
 import Navbar from "../Navbar/Navbar";
@@ -85,13 +86,16 @@ function CourseDetail() {
                 <button className="w-full md:w-auto px-8 py-3 bg-[#1872CA] text-white rounded-md text-lg font-semibold hover:brightness-95 transition duration-300">
                   Enroll Now
                 </button>
-                <button className="w-full md:w-auto px-8 py-3 bg-[#1B2834] text-white rounded-md text-lg font-semibold hover:bg-[#16222b] transition duration-300">
+                <Link
+                  to={"/courses"}
+                  className="w-full md:w-auto text-center hover:brightness-150 active:scale-95 px-8 py-3 bg-[#1B2834] text-white rounded-md text-lg font-semibold hover:bg-[#16222b] transition duration-300"
+                >
                   other Courses
-                </button>
+                </Link>
               </div>
             </div>
             <div className="mt-8">
-              <h3 className="text-xl font-bold text-white mb-4">
+              <h3 className="text-xl font-bold text-black mb-4">
                 What You Will Learn
               </h3>
               <ul className="list-disc list-inside text-gray-700 space-y-2">
