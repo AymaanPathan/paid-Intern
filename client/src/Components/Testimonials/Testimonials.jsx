@@ -8,7 +8,10 @@ function Testimonials() {
   return (
     <div className="p-6 mt-12">
       <div>
-        <p className="text-[#F7B500] font-bold text-xl sm:text-2xl">
+        <p
+          className="text-[#F7B500] font-bold text-xl sm:text-2xl"
+          id="testimonial"
+        >
           Testimonials
         </p>
         <p className="font-bold text-lg sm:text-2xl mt-2">

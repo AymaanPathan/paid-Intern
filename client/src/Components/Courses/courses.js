@@ -14,6 +14,9 @@ import fullstack1 from "./images/fullstack1.png";
 import fullstack2 from "./images/fullstack2.png";
 import fullstack3 from "./images/fullstack3.png";
 
+import python from "./images/image.png";
+import pythonVideo from "./Videos/python.mp4";
+
 // Videos
 import reactVideo1 from "./Videos/react1.mp4";
 import reactVideo2 from "./Videos/react2.mp4";
@@ -282,6 +285,22 @@ const courses = [
       "A complete guide to building full-stack applications using the Java stack (Java, Spring Boot).",
     image: fullstack3,
     video: fullstackVideo3,
+  },
+  {
+    id: 16,
+    name: "Getting Started With Python 3 for Beginners",
+    title: "Python",
+    instructor: "Olivia Brown",
+    whatyouLearn: [
+      "Master Python programming",
+      "Build full-stack applications using Python frameworks",
+      "Understand deployment strategies for Python applications",
+    ],
+    time: "11 weeks",
+    description:
+      "A complete guide to building full-stack applications using Python frameworks such as Django and Flask.",
+    image: python,
+    video: pythonVideo,
   },
 ];
 

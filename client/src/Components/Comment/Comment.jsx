@@ -26,10 +26,12 @@ function Comment() {
             <p className="font-semibold  text-sm">Elena Miles</p>
             <span className="text-gray-800 text-sm">Student</span>
           </div>
-          <span className="text-gray-800 flex items-center gap-3 font-bold cursor-pointer text-sm md:text-base">
-            See All reviews
-            <i className="fa fa-arrow-right hover:translate-x-1 duration-150 text-xl"></i>
-          </span>
+          <a href="#testimonial">
+            <span className="text-gray-800 flex items-center gap-3 font-bold cursor-pointer text-sm md:text-base">
+              See All reviews
+              <i className="fa fa-arrow-right hover:translate-x-1 duration-150 text-xl"></i>
+            </span>
+          </a>
         </div>
       </div>
     </div>

@@ -33,12 +33,12 @@ function Navbar() {
           onClick={toggleMenu}
         />
 
-        <div className="hidden relative left-4 md:flex flex-grow items-center justify-end  ">
+        <div className="hidden relative left-4 md:flex  flex-grow items-center justify-end  ">
           <ul className="flex bg-white  text-black  gap-10 p-4 rounded-s-full">
             <Link
               to="/"
               className={`hover:brightness-95 ${
-                location.pathname === "/" ? "text-blue-500 font-semibold" : ""
+                location.pathname === "/" ? "text-blue-500 " : ""
               } `}
               onClick={toggleMenu}
             >
@@ -47,9 +47,7 @@ function Navbar() {
             <Link
               to="/contact"
               className={`hover:brightness-95 ${
-                location.pathname === "/contact"
-                  ? "text-blue-500 font-semibold"
-                  : ""
+                location.pathname === "/contact" ? "text-blue-500 " : ""
               } `}
               onClick={toggleMenu}
             >
@@ -77,11 +75,17 @@ function Navbar() {
             >
               Course
             </Link>
-            <input
-              type="text"
-              placeholder="Search..."
-              className="px-2 py-1 outline-none rounded-full border-gray-300"
-            />
+            <Link
+              to="/subscribe"
+              className={`hover:brightness-95 ${
+                location.pathname === "/subscribe"
+                  ? "text-blue-500 font-semibold"
+                  : ""
+              } `}
+              onClick={toggleMenu}
+            >
+              Subscribe
+            </Link>
           </ul>
         </div>
       </div>
@@ -140,11 +144,17 @@ function Navbar() {
           >
             Course
           </Link>
-          <input
-            type="text"
-            placeholder="Search..."
-            className="px-2 py-1 outline-none rounded-full border-gray-300"
-          />
+          <Link
+            to="/subscribe"
+            className={`hover:brightness-95 ${
+              location.pathname === "/subscribe"
+                ? "text-blue-500 font-semibold"
+                : ""
+            } `}
+            onClick={toggleMenu}
+          >
+            Subscribe
+          </Link>
         </div>
       </div>
     </nav>

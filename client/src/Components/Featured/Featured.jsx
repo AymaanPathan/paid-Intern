@@ -1,7 +1,14 @@
 import pc from "./pc.jpg";
 import tick from "./check.png";
+import { Link } from "react-router-dom";
 
 function Featured() {
+  const handleClick = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   return (
     <div className="p-6 mt-12 flex flex-col lg:flex-row items-center justify-start h-full">
       <div className="lg:flex-1 flex items-center justify-center">
@@ -42,9 +49,13 @@ function Featured() {
             <span className="text-sm lg:text-base">8+ more lessons</span>
           </div>
         </div>
-        <button className="rounded-2xl text-white px-4 py-3 font-bold hover:bg-[#F7B500] duration-150 bg-[#1579E6] w-full mt-8">
+        <Link
+          onClick={handleClick}
+          to={"/course/16"}
+          className="rounded-2xl text-center text-white px-4 py-3 font-bold hover:bg-[#F7B500] duration-150 bg-[#1579E6] w-full mt-8"
+        >
           Start course
-        </button>
+        </Link>
       </div>
     </div>
   );
