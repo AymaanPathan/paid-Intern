@@ -11,45 +11,49 @@ function Contact() {
         <Navbar />
       </div>
       <div className="main flex flex-col lg:flex-row items-center p-6 gap-6">
-        <div className="left bg-[#4362b7] shadow-inner rounded-xl flex flex-col justify-between h-auto lg:h-[34rem] border px-6 py-5 w-full lg:w-[38rem] items-start gap-4">
+        <div className="left bg-[#4362b7] shadow-inner rounded-xl flex flex-col justify-between h-auto lg:h-[42rem] border px-6 py-5 w-full lg:w-[38rem] items-start gap-4">
           <h1 className="text-3xl lg:text-7xl text-white font-bold">
             Contact Us
           </h1>
-          <p className="w-full lg:w-96 text-lg text-gray-200">
+          <p className="w-full lg:w-96 text-sm lg:text-lg text-gray-200 lg:text-gray-200">
             Consectetur sodales et, congue sem velit et facilisi metus ac,
             mattis quis est egestas.
           </p>
           <div className="flex items-center gap-4">
             <img
               src={location}
-              className="w-6 lg:w-8 h-6 lg:h-8"
+              className="w-5 lg:w-8 h-5 lg:h-8"
               alt="location"
             />
             <div>
-              <span className="font-bold text-white text-xl lg:text-2xl">
+              <span className="font-bold text-white text-sm lg:text-2xl">
                 Address
               </span>
-              <p className="font-semibold text-gray-200">
+              <p className="font-semibold lg:text-lg text-xs text-gray-200">
                 123 Fifth Avenue, NY 126004, New York, USA.
               </p>
             </div>
           </div>
           <div className="flex items-center gap-4">
-            <img src={phone} className="w-6 lg:w-8 h-6 lg:h-8" alt="phone" />
+            <img src={phone} className="w-5 lg:w-8 h-5 lg:h-8" alt="phone" />
             <div>
-              <span className="font-bold text-xl lg:text-2xl text-white">
+              <span className="font-bold text-white text-sm lg:text-2xl">
                 Call Us
               </span>
-              <p className="font-semibold text-gray-200">+1 123 456 78 90</p>
+              <p className="font-semibold lg:text-lg text-xs text-gray-200">
+                +1 123 456 78 90
+              </p>
             </div>
           </div>
           <div className="flex items-center gap-4">
-            <img src={msg} className="w-6 lg:w-8 h-6 lg:h-8" alt="message" />
+            <img src={msg} className="w-5 lg:w-8 h-5 lg:h-8" alt="message" />
             <div>
-              <span className="font-bold text-xl lg:text-2xl text-white">
+              <span className="font-bold text-white text-sm lg:text-2xl">
                 Email Us
               </span>
-              <p className="font-semibold text-gray-200">hello@example.com</p>
+              <p className="font-semibold lg:text-lg text-xs text-gray-200">
+                aymaanpathan5@gmail.com
+              </p>
             </div>
           </div>
           <ul className="flex mt-4 justify-start gap-6">
@@ -121,7 +125,7 @@ function Contact() {
             </li>
           </ul>
         </div>
-        <div className="right rounded-xl bg-white flex flex-col justify-between h-auto lg:h-[34rem] border px-6 py-5 w-full lg:w-[38rem] items-start gap-4">
+        <div className="right rounded-xl bg-white flex flex-col justify-between h-auto  border px-6 py-5 w-full lg:w-[38rem] items-start gap-4">
           <label
             htmlFor="name"
             className="text-xl lg:text-2xl font-bold text-gray-500"
@@ -169,6 +173,10 @@ function Contact() {
             className="bg-gray-100 h-18 rounded-lg lg:h-36 border-2 p-3 lg:p-5 w-full text-start resize-none"
             id="message"
           ></input>
+          <button className="hover:brightness-95 active:scale-95 bg-[#0d4bf7] inline-flex items-center gap-2 font-semibold w-fit text-white py-2 px-6 rounded-md">
+            Send Message
+            <i className="fa fa-arrow-right hover:translate-x-1 duration-150 text-xl "></i>
+          </button>
         </div>
       </div>
       <Footer />
