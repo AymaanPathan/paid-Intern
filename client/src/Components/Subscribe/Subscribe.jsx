@@ -51,13 +51,13 @@ function Subscribe() {
       <div className="bg-blue-500">
         <Navbar />
       </div>
-      <div className="main p-8 mt-12">
+      <div className="main p-4 sm:p-8 mt-8 sm:mt-12">
         <div className="flex flex-col gap-4 justify-between items-center">
-          <div>
-            <h1 className="text-blue-500 text-5xl font-bold">
+          <div className="max-w-lg text-center">
+            <h1 className="text-blue-500 text-2xl sm:text-4xl md:text-5xl font-bold">
               Subscribe To Our Newsletter
             </h1>
-            <p className="text-gray-400 text-3xl text-left w-[45rem] mt-5">
+            <p className="text-gray-400 text-lg sm:text-2xl md:text-3xl text-left sm:text-center w-full mt-3 sm:mt-5">
               Stay updated with the latest courses on JavaScript, React, and
               more.
             </p>
@@ -66,11 +66,11 @@ function Subscribe() {
               onChange={(e) => setEmail(e.target.value)}
               type="email"
               placeholder="Your Email..."
-              className="border border-blue-300  mt-12 w-full py-3 px-3 rounded-lg outline-none bg-gray-200 text-black"
+              className="border border-blue-300 mt-8 sm:mt-12 w-full py-2 sm:py-3 px-3 rounded-lg outline-none bg-gray-200 text-black"
             />
             <button
               onClick={handleSubmit}
-              className="rounded-2xl text-center text-white px-4 py-3  font-bold hover:brightness-95 active:scale-95 duration-150 bg-[#1579E6] w-full mt-8"
+              className="rounded-2xl text-center text-white px-4 py-2 sm:py-3 font-bold hover:brightness-95 active:scale-95 duration-150 bg-[#1579E6] w-full mt-6 sm:mt-8"
             >
               Subscribe
             </button>

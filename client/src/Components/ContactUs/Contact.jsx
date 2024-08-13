@@ -1,10 +1,62 @@
+import { useState } from "react";
 import Footer from "../Footer/Footer";
 import Navbar from "../Navbar/Navbar";
 import location from "./location.png";
 import msg from "./msg.png";
 import phone from "./phone.png";
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 function Contact() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+  const navigate = useNavigate();
+
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email) && email.endsWith(".com");
+  };
+
+  const handleSubmitForm = async (e) => {
+    e.preventDefault();
+
+    if (!validateEmail(email)) {
+      toast.error("Invalid email format");
+      return;
+    }
+    try {
+      toast.loading("Please Wait...");
+      const response = await fetch(
+        "http://localhost:3000/sendContactUsMessage",
+        {
+          method: "POST",
+          headers: {
+            "Content-type": "application/json",
+          },
+          body: JSON.stringify({ name, email, subject, message }),
+        }
+      );
+      await response.json();
+      if (response.ok) {
+        toast.dismiss();
+        toast.success("Thank You For Contacting Us");
+        navigate("/");
+        setName("");
+        setEmail("");
+        setSubject("");
+        setMessage("");
+      } else {
+        toast.dismiss();
+        toast.error("Please Provide All Information");
+      }
+    } catch (err) {
+      console.log(err);
+      toast.error(err);
+    }
+  };
+
   return (
     <div>
       <div className="bg-blue-500">
@@ -133,6 +185,8 @@ function Contact() {
             Name
           </label>
           <input
+            onChange={(e) => setName(e.target.value)}
+            value={name}
             id="name"
             type="text"
             placeholder="Your Name"
@@ -145,6 +199,8 @@ function Contact() {
             Email
           </label>
           <input
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             className="bg-gray-100 h-18 rounded-lg lg:h-18 border-2 p-3 lg:p-5 w-full text-start"
             id="email"
             type="text"
@@ -157,6 +213,8 @@ function Contact() {
             Subject
           </label>
           <input
+            value={subject}
+            onChange={(e) => setSubject(e.target.value)}
             className="bg-gray-100 h-18 rounded-lg lg:h-18 border-2 p-3 lg:p-5 w-full text-start"
             type="text"
             id="subject"
@@ -169,11 +227,16 @@ function Contact() {
             Your Message
           </label>
           <input
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
             placeholder="Your Message"
-            className="bg-gray-100 h-18 rounded-lg lg:h-36 border-2 p-3 lg:p-5 w-full text-start resize-none"
+            className="bg-gray-100 h-18 rounded-lg  border-2 p-3 lg:p-5 w-full text-start resize-none"
             id="message"
           ></input>
-          <button className="hover:brightness-95 active:scale-95 bg-[#0d4bf7] inline-flex items-center gap-2 font-semibold w-fit text-white py-2 px-6 rounded-md">
+          <button
+            onClick={handleSubmitForm}
+            className="hover:brightness-95 active:scale-95 bg-[#0d4bf7] inline-flex items-center gap-2 font-semibold w-fit text-white py-2 px-6 rounded-md"
+          >
             Send Message
             <i className="fa fa-arrow-right hover:translate-x-1 duration-150 text-xl "></i>
           </button>

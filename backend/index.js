@@ -13,6 +13,7 @@ const port = process.env.PORT;
 const Router = express.Router();
 
 Router.post("/sendmail", email.sendNewsLetter);
+Router.post("/sendContactUsMessage", email.sendContactUsMessage);
 
 app.use(Router);
 

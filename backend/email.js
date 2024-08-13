@@ -20,10 +20,7 @@ const sendEmail = async (options) => {
 
   try {
     await transporter.sendMail(mailOption);
-    console.log("Email sent successfully!");
-  } catch (error) {
-    console.error("Error sending email:", error);
-  }
+  } catch (error) {}
 };
 
 const sendNewsLetter = async (req, res) => {
@@ -63,14 +60,12 @@ Thank you once again for subscribing. We’re excited to have you with us and ca
 
     await sendEmail({ email, subject, message });
 
-    console.log("Message sent: %s");
     res.status(200).json({
       status: "Success",
       message: "Email sent successfully",
       data: { email, subject, message },
     });
   } catch (error) {
-    console.error("Error sending email:", error);
     res.status(500).json({
       status: "Error",
       message: "Error sending email",
@@ -79,4 +74,39 @@ Thank you once again for subscribing. We’re excited to have you with us and ca
   }
 };
 
-module.exports = { sendEmail, sendNewsLetter };
+const sendContactUsMessage = async (req, res) => {
+  try {
+    const { name, email, subject, message } = req.body;
+
+    if (!name || !email || !subject || !message) {
+      return res.status(400).json({
+        status: "Failed",
+        message: "Name, email, subject, and message are required",
+      });
+    }
+
+    const emailMessage = `
+Hi From ${name},
+
+${message}
+
+
+To MindUp Team`;
+
+    await sendEmail({ email, subject, message: emailMessage });
+
+    res.status(200).json({
+      status: "Success",
+      message: "Email sent successfully",
+      data: { name, email, subject, message: emailMessage },
+    });
+  } catch (error) {
+    res.status(500).json({
+      status: "Error",
+      message: "Error sending email",
+      error: error.message,
+    });
+  }
+};
+
+module.exports = { sendEmail, sendNewsLetter, sendContactUsMessage };
