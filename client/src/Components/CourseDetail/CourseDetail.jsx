@@ -6,15 +6,17 @@ import { useParams } from "react-router-dom";
 import courses from "../Courses/courses";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
-import play from "./play.png";
-import pause from "./pause.png";
+
+import Form from "./Form";
 
 function CourseDetail() {
   const { id } = useParams();
+  const email = localStorage.getItem("email");
   const course = courses.find((course) => course.id === parseInt(id));
 
   const [isPlaying, setIsPlaying] = useState(false);
   const [videoElement, setVideoElement] = useState(null);
+  const [isOpen, setIsOpen] = useState(false);
 
   const handlePlayPause = () => {
     if (videoElement) {
@@ -48,13 +50,14 @@ function CourseDetail() {
       <div className="bg-[#176CC0]">
         <Navbar />
       </div>
+      {isOpen && <Form isOpen={setIsOpen} />}
       <div className="w-full py-8">
         <div className="mx-auto max-w-4xl grid grid-cols-1 lg:grid-cols-2 gap-8 bg-opacity-90 p-6 rounded-lg">
           <div className="relative flex flex-col items-center">
             {!isPlaying && (
               <>
                 <img
-                  className="absolute inset-0 rounded-lg w-full h-fit object-cover"
+                  className="absolute z-10 inset-0 rounded-lg w-full h-fit object-cover"
                   src={course.image}
                   alt="Course Poster"
                 />
@@ -62,7 +65,7 @@ function CourseDetail() {
             )}
 
             <video
-              className="rounded-lg cursor-pointer w-full h-fit"
+              className="rounded-lg z-10 cursor-pointer w-full h-fit"
               poster={course.image}
               src={course.video}
               controls={false} // Hide default controls
@@ -83,7 +86,10 @@ function CourseDetail() {
                 {course.description}
               </p>
               <div className="grid grid-cols-1 gap-4 items-center justify-between">
-                <button className="w-full md:w-auto px-8 py-3 bg-[#1872CA] text-white rounded-md text-lg font-semibold hover:brightness-95 transition duration-300">
+                <button
+                  onClick={() => setIsOpen(true)}
+                  className="w-full md:w-auto px-8 py-3 bg-[#1872CA] text-white rounded-md text-lg font-semibold hover:brightness-95 transition duration-300"
+                >
                   Enroll Now
                 </button>
                 <Link
@@ -104,11 +110,6 @@ function CourseDetail() {
                 ))}
               </ul>
             </div>
-          </div>
-          <div>
-            {/* <div className="relative bottom-[62rem] lg:bottom-[42rem] text-center text-white text-sm bg-black bg-opacity-60 py-1 px-3 rounded-md">
-              Click on poster to play preview
-            </div> */}
           </div>
         </div>
       </div>
