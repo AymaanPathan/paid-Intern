@@ -3,7 +3,7 @@ import logo from "./logo.png";
 
 export default function Footer() {
   return (
-    <footer className="p-6 mt-12  grid lg:grid-cols-2 grid-cols-1 gap-6 items-start justify-between bg-[#030000] border-t-2 border-blue-500">
+    <footer className="p-12 grid lg:grid-cols-2 grid-cols-1 gap-6 items-start justify-between  bg-[#030000] border-t-2 border-blue-500">
       <div className="flex flex-col items-start justify-start lg:items-start lg:ml-0">
         <img src={logo} className="w-24 h-24 mb-4" alt="MindUp Logo" />
         <p className="text-xs lg:text-lg  font-semibold text-white">

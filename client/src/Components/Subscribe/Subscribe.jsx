@@ -47,7 +47,7 @@ function Subscribe() {
   };
 
   return (
-    <div>
+    <div className="">
       <div className="bg-blue-500">
         <Navbar />
       </div>

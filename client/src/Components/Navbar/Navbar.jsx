@@ -1,17 +1,22 @@
-import { useState } from "react";
+/* eslint-disable react-hooks/rules-of-hooks */
+import { useContext, useState } from "react";
 import logo from "./logo.png";
 import menu from "./menu.png";
 import cross from "./close.png";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import DarkModeBtn from "../DarkModeButton/DarkModeBtn";
+import { DarkModeContext } from "../../Context/DarkContext";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
-
+  const { handleDarkMode, isDark } = useContext(DarkModeContext);
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  console.log(isDark);
 
   return (
     <nav className="relative">
@@ -86,6 +91,9 @@ function Navbar() {
             >
               Subscribe
             </Link>
+            <div onChange={handleDarkMode}>
+              <DarkModeBtn />
+            </div>
           </ul>
         </div>
       </div>
@@ -155,6 +163,9 @@ function Navbar() {
           >
             Subscribe
           </Link>
+          <div onChange={handleDarkMode}>
+            <DarkModeBtn />
+          </div>
         </div>
       </div>
     </nav>

@@ -6,11 +6,20 @@ import Courses from "../Courses/Course";
 import Testimonials from "../Testimonials/Testimonials";
 import Membership from "../Membership/Membership";
 import Footer from "../Footer/Footer";
+import { useContext } from "react";
+import { DarkModeContext } from "../../Context/DarkContext";
 
 function Home() {
+  const { isDark } = useContext(DarkModeContext);
   return (
-    <div>
-      <div className="bg-[url('./Components/Navbar/bg.png')] bg-cover bg-no-repeat">
+    <div className={isDark && `dark`}>
+      <div
+        className={
+          isDark
+            ? "bg-black"
+            : "bg-[url('./Components/Navbar/bg.png')] bg-cover bg-no-repeat"
+        }
+      >
         <Navbar className="bg-[url('/navbar-bg.png')] bg-cover bg-no-repeat" />
         <Hero className="bg-[url('/hero-bg.png')] bg-cover bg-no-repeat" />
       </div>

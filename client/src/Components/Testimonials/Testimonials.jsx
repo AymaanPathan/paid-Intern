@@ -6,7 +6,7 @@ import p4 from "../Testimonials/p4.jpg";
 
 function Testimonials() {
   return (
-    <div className="p-6 mt-12">
+    <div className="p-12 dark:bg-black">
       <div>
         <p
           className="text-[#F7B500] font-bold text-xl sm:text-2xl"
@@ -14,7 +14,7 @@ function Testimonials() {
         >
           Testimonials
         </p>
-        <p className="font-bold text-lg sm:text-2xl mt-2">
+        <p className="font-bold text-lg dark:text-white sm:text-2xl mt-2">
           Trusted by Thousands of Students and Tutors
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">

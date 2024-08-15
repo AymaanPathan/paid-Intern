@@ -30,9 +30,9 @@ export default function Courses() {
   }, [filter]);
 
   return (
-    <div className="best-container mt-12 p-8">
+    <div className="dark:bg-black p-12">
       <div className="grid grid-cols-1 gap-2 lg:mb-6">
-        <span className="lg:text-lg text-sm text-start text-gray-500 font-semibold">
+        <span className="lg:text-lg text-sm text-start dark:text-gray-200 text-gray-500 font-semibold">
           Our Courses
         </span>
         <span
@@ -43,14 +43,14 @@ export default function Courses() {
         </span>
       </div>
       <div className="flex flex-col items-start justify-center">
-        <div className="text-black flex flex-wrap justify-center gap-3 mb-6">
+        <div className="text-black mt-4 flex flex-wrap justify-center gap-3 mb-6">
           {navs.map((navItem, index) => (
             <span
               key={index}
               className={`${
                 active === index
                   ? "font-bold border bg-[#1973C9] text-white rounded-md"
-                  : "text-black border"
+                  : "text-black dark:text-white border"
               } h-full py-2 w-32 text-center cursor-pointer select-none rounded-md text-lg`}
               onClick={(e) => handleClick(e, index)}
             >
@@ -58,7 +58,7 @@ export default function Courses() {
             </span>
           ))}
         </div>
-        <div className="deal__main mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {showProducts.map((item) => (
             <div key={item.id} className="deal__item">
               <div className="w-full h-full rounded-lg shadow">
@@ -70,7 +70,7 @@ export default function Courses() {
                   />
                 </Link>
                 <div className="p-5">
-                  <h5 className="mb-2 text-sm text-left tracking-tight text-gray-900">
+                  <h5 className="mb-2 text-sm text-left tracking-tight dark:text-gray-200 text-gray-900">
                     {item.name}
                   </h5>
                   <div className="flex items-center mb-3 justify-start gap-2">
@@ -78,14 +78,14 @@ export default function Courses() {
                       {item.instructor}
                     </p>
                   </div>
-                  <div className="flex justify-start gap-4 items-center">
+                  <div className="flex justify-start dark:text-white gap-4 items-center">
                     <p className="font-bold text-lg">Duration: {item.time}</p>
                   </div>
                   <div className="flex justify-center mt-8">
                     <Link
                       onClick={handleClickToCourse}
                       to={`/course/${item.id}`}
-                      className="rounded-2xl text-white px-4 py-3 font-bold hover:bg-[#F7B500] duration-150 bg-[#1579E6] w-full"
+                      className="rounded-lg text-white px-4 py-3 font-bold hover:bg-[#F7B500] duration-150 bg-[#1579E6] w-full"
                     >
                       View Detail
                     </Link>

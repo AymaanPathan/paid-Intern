@@ -10,7 +10,7 @@ function Featured() {
     });
   };
   return (
-    <div className="p-6 mt-12 flex flex-col lg:flex-row items-center justify-start h-full">
+    <div className="p-12 dark:bg-black flex flex-col lg:flex-row items-center justify-start h-full">
       <div className="lg:flex-1 flex items-center justify-center">
         <img
           src={pc}
@@ -18,7 +18,7 @@ function Featured() {
           alt="Featured"
         />
       </div>
-      <div className="lg:flex-1 flex flex-col justify-center lg:pl-8 mt-8 lg:mt-0">
+      <div className="lg:flex- dark:text-white 1 flex flex-col justify-center lg:pl-8 mt-8 lg:mt-0">
         <div className="flex items-center justify-start gap-2">
           <span className="w-4 h-4 rounded-full bg-yellow-500"></span>
           <p>Featured Course</p>
