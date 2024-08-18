@@ -19,9 +19,9 @@ function Hero() {
 
   return (
     <div className="flex flex-col lg:flex-row items-center justify-between p-4 lg:p-16 gap-12 lg:gap-16">
-      {/* Left */}
+      {/* Left Section */}
       <div className="flex flex-col gap-6 lg:gap-12 w-full lg:w-1/2">
-        <div className="flex items-center gap-3 cursor-pointer w-fit py-2 px-4 rounded-xl  text-black">
+        <div className="flex items-center gap-3 cursor-pointer w-fit py-2 px-4 rounded-xl text-black">
           <span className="w-4 h-4 rounded-full bg-yellow-500"></span>
           <p className="text-white">Latest Course</p>
         </div>
@@ -33,26 +33,23 @@ function Hero() {
           anywhere.
         </span>
         <div className="flex items-center justify-start gap-4">
-          <div className="flex items-center text-gray-200  cursor-pointer">
-            <Link
-              to={"/courses"}
-              className="hero-btn bg-[#f8f8f8] inline-flex items-center gap-2 font-semibold w-fit text-black py-2 px-6 rounded-md"
-            >
-              View all course
-              <i className="fa fa-arrow-right hover:translate-x-1 duration-150 text-xl "></i>
-            </Link>
-          </div>
+          <Link
+            to={"/courses"}
+            className="hero-btn bg-[#f8f8f8] inline-flex items-center gap-2 font-semibold w-fit text-black py-2 px-6 rounded-md"
+          >
+            View all courses
+            <i className="fa fa-arrow-right hover:translate-x-1 duration-150 text-xl"></i>
+          </Link>
         </div>
       </div>
 
-      {/* Right */}
+      {/* Right Section */}
       <div className="relative flex items-center justify-center w-full lg:w-1/2">
         <video
           id="hero-video"
           src={video}
           loop
           muted
-          autoPlay={false}
           playsInline
           className="rounded-3xl w-full lg:w-full h-full"
           onClick={togglePlay}

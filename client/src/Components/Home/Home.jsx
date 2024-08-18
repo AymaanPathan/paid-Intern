@@ -16,7 +16,7 @@ function Home() {
       <div
         className={
           isDark
-            ? "bg-black"
+            ? "bg-gray-900"
             : "bg-[url('./Components/Navbar/bg.png')] bg-cover bg-no-repeat"
         }
       >

@@ -1,22 +1,33 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import logo from "./logo.png";
 import menu from "./menu.png";
 import cross from "./close.png";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-import DarkModeBtn from "../DarkModeButton/DarkModeBtn";
+import "./darkmode.css";
 import { DarkModeContext } from "../../Context/DarkContext";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
-  const { handleDarkMode, isDark } = useContext(DarkModeContext);
+  const { handleDarkMode, isDark, setIsDark } = useContext(DarkModeContext);
+
+  useEffect(() => {
+    const savedIsDark = localStorage.getItem("isDark");
+    if (savedIsDark) {
+      setIsDark(JSON.parse(savedIsDark));
+    }
+  }, [setIsDark]);
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  console.log(isDark);
+  const handleCheckboxChange = () => {
+    handleDarkMode();
+    localStorage.setItem("isDark", JSON.stringify(!isDark));
+  };
 
   return (
     <nav className="relative">
@@ -38,8 +49,8 @@ function Navbar() {
           onClick={toggleMenu}
         />
 
-        <div className="hidden relative left-4 md:flex  flex-grow items-center justify-end  ">
-          <ul className="flex bg-white  text-black  gap-10 p-4 rounded-s-full">
+        <div className="hidden relative left-4 md:flex  flex-grow items-center justify-end">
+          <ul className="flex bg-white text-black gap-10 p-4 rounded-s-full">
             <Link
               to="/"
               className={`hover:brightness-95 ${
@@ -91,16 +102,21 @@ function Navbar() {
             >
               Subscribe
             </Link>
-            <div onChange={handleDarkMode}>
-              <DarkModeBtn />
-            </div>
+            <label className="switch">
+              <input
+                type="checkbox"
+                checked={isDark}
+                onChange={handleCheckboxChange}
+              />
+              <span className="slider"></span>
+            </label>
           </ul>
         </div>
       </div>
 
       {/* Mobile Menu */}
       <div
-        className={`fixed inset-0   h-72 rounded-b-xl lg:text-black bg-[#4340f7]  text-white p-4 transition-transform transform md:hidden ${
+        className={`fixed inset-0 h-72 rounded-b-xl lg:text-black bg-[#4340f7] text-white p-4 transition-transform transform md:hidden ${
           isMenuOpen ? "translate-x-0" : "translate-x-full"
         } z-50`}
       >
@@ -163,9 +179,14 @@ function Navbar() {
           >
             Subscribe
           </Link>
-          <div onChange={handleDarkMode}>
-            <DarkModeBtn />
-          </div>
+          <label className="switch">
+            <input
+              type="checkbox"
+              checked={isDark}
+              onChange={handleCheckboxChange}
+            />
+            <span className="slider"></span>
+          </label>
         </div>
       </div>
     </nav>

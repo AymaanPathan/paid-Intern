@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import toast from "react-hot-toast";
 import Footer from "../Footer/Footer";
 import Navbar from "../Navbar/Navbar";
 import { useNavigate } from "react-router-dom";
+import { DarkModeContext } from "../../Context/DarkContext";
 
 function Subscribe() {
+  const { isDark } = useContext(DarkModeContext);
   const [email, setEmail] = useState("");
   const navigate = useNavigate();
 
@@ -47,11 +49,11 @@ function Subscribe() {
   };
 
   return (
-    <div className="">
-      <div className="bg-blue-500">
+    <div className={isDark && `dark`}>
+      <div className="bg-blue-500 dark:bg-gray-900">
         <Navbar />
       </div>
-      <div className="main p-4 sm:p-8 mt-8 sm:mt-12">
+      <div className="main p-12 dark:bg-gray-900  ">
         <div className="flex flex-col gap-4 justify-between items-center">
           <div className="max-w-lg text-center">
             <h1 className="text-blue-500 text-2xl sm:text-4xl md:text-5xl font-bold">

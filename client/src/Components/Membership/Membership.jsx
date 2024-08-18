@@ -8,7 +8,7 @@ function Membership() {
     });
   };
   return (
-    <div className="p-12 dark:bg-black flex flex-col items-center justify-center h-full text-center">
+    <div className="py-16 px-8 dark:bg-gray-900 flex flex-col items-center justify-center h-full text-center">
       <div className="max-w-lg">
         <p className="font-bold text-3xl dark:text-white">Subscribe</p>
         <div className="flex flex-col gap-4 items-center">

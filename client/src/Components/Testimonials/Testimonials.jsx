@@ -6,7 +6,7 @@ import p4 from "../Testimonials/p4.jpg";
 
 function Testimonials() {
   return (
-    <div className="p-12 dark:bg-black">
+    <div className="py-16 px-8 dark:bg-gray-900">
       <div>
         <p
           className="text-[#F7B500] font-bold text-xl sm:text-2xl"

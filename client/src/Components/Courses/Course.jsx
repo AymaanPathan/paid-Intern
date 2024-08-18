@@ -30,7 +30,7 @@ export default function Courses() {
   }, [filter]);
 
   return (
-    <div className="dark:bg-black p-12">
+    <div className="dark:bg-gray-900 p-12">
       <div className="grid grid-cols-1 gap-2 lg:mb-6">
         <span className="lg:text-lg text-sm text-start dark:text-gray-200 text-gray-500 font-semibold">
           Our Courses
@@ -58,10 +58,10 @@ export default function Courses() {
             </span>
           ))}
         </div>
-        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-          {showProducts.map((item) => (
-            <div key={item.id} className="deal__item">
-              <div className="w-full h-full rounded-lg shadow">
+        <div className="mt-8 grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+          {showProducts.map((item, i) => (
+            <div key={i}>
+              <div className="w-full h-full  rounded-lg shadow">
                 <Link to={`/courses/${item.id}`}>
                   <img
                     className="h-48 w-full"

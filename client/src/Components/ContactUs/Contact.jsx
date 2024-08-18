@@ -16,6 +16,8 @@ function Contact() {
   const { isDark } = useContext(DarkModeContext);
   const navigate = useNavigate();
 
+  console.log(isDark);
+
   const validateEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email) && email.endsWith(".com");
@@ -61,11 +63,11 @@ function Contact() {
 
   return (
     <div className={isDark && `dark`}>
-      <div className="bg-blue-500">
+      <div className="bg-blue-500 dark:bg-gray-900">
         <Navbar />
       </div>
-      <div className="main dark:bg-black flex flex-col lg:flex-row items-center p-6 gap-6">
-        <div className="left dark:bg-black bg-[#4362b7] shadow-inner rounded-xl flex flex-col justify-between h-auto lg:h-[42rem] border px-6 py-5 w-full lg:w-[38rem] items-start gap-4">
+      <div className="main dark:bg-gray-900 flex flex-col lg:flex-row items-center p-6 gap-6">
+        <div className="left dark:bg-gray-900 bg-[#4362b7] shadow-inner rounded-xl flex flex-col justify-between h-auto lg:h-[42rem] border px-6 py-5 w-full lg:w-[38rem] items-start gap-4">
           <h1 className="text-3xl lg:text-7xl text-white font-bold">
             Contact Us
           </h1>

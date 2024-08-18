@@ -7,8 +7,11 @@ import courses from "../Courses/courses";
 import { Link } from "react-router-dom";
 import right from "./right-arrow.png";
 import Footer from "../Footer/Footer";
+import { useContext } from "react";
+import { DarkModeContext } from "../../Context/DarkContext";
 
 function Courses() {
+  const { isDark } = useContext(DarkModeContext);
   const handleClick = () => {
     window.scrollTo({
       top: 0,
@@ -16,7 +19,7 @@ function Courses() {
     });
   };
   return (
-    <div>
+    <div className={isDark && `dark`}>
       <div className="bg-blue-500">
         <Navbar />
       </div>

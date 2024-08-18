@@ -11,7 +11,7 @@ function InstructorsCard({ image, name, bio }) {
         <span className="font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl">
           {name}
         </span>
-        <span className="text-base sm:text-lg md:text-xl lg:text-xl">
+        <span className="text-center sm:text-lg md:text-xl lg:text-xl">
           {bio}
         </span>
       </div>
