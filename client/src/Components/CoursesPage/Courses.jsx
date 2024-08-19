@@ -12,20 +12,26 @@ import { DarkModeContext } from "../../Context/DarkContext";
 
 function Courses() {
   const { isDark } = useContext(DarkModeContext);
+
   const handleClick = () => {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
   };
+
   return (
-    <div className={isDark && `dark`}>
-      <div className="bg-blue-500">
+    <div className={isDark ? `dark bg-gray-900 text-white` : ``}>
+      <div className={isDark ? "bg-gray-800" : "bg-blue-500"}>
         <Navbar />
       </div>
-      <div className="main flex flex-col lg:flex-row items-center justify-between p-8 w-full h-auto lg:h-96 bg-[#4170f3] ">
+      <div
+        className={`main flex flex-col lg:flex-row items-center justify-between p-8 w-full h-auto lg:h-96 ${
+          isDark ? "bg-gray-800" : "bg-[#4170f3]"
+        }`}
+      >
         <div className="left mb-4 lg:mb-0">
-          <h1 className="text-4xl text-gray-200 lg:text-8xl font-bold">
+          <h1 className="text-4xl lg:text-8xl font-bold text-gray-200">
             Lessons
           </h1>
         </div>
@@ -69,7 +75,11 @@ function Courses() {
           if (item.id >= 1 && item.id <= 4) {
             return (
               <div key={item.id} className="h-full w-full">
-                <div className="w-full h-full rounded-lg shadow-lg overflow-hidden">
+                <div
+                  className={`w-full h-full rounded-lg shadow-lg overflow-hidden ${
+                    isDark ? "bg-gray-800 text-white" : ""
+                  }`}
+                >
                   <Link onClick={handleClick} to={`/course/${item.id}`}>
                     <img
                       className="h-64 lg:h-96 w-full object-cover"
@@ -85,11 +95,19 @@ function Courses() {
                     />
                   </Link>
                   <div className="p-6">
-                    <h5 className="mb-2 text-lg font-semibold text-left text-gray-900">
+                    <h5
+                      className={`mb-2 text-lg font-semibold text-left ${
+                        isDark ? "text-gray-100" : "text-gray-900"
+                      }`}
+                    >
                       {item.name}
                     </h5>
                     <div className="flex items-center mb-3 justify-start gap-2">
-                      <p className="font-normal text-gray-700">
+                      <p
+                        className={`font-normal ${
+                          isDark ? "text-gray-300" : "text-gray-700"
+                        }`}
+                      >
                         {item.instructor}
                       </p>
                     </div>
@@ -108,7 +126,9 @@ function Courses() {
           }
         })}
       </div>
-      <Footer />
+      <div className="mt-12">
+        <Footer />
+      </div>
     </div>
   );
 }

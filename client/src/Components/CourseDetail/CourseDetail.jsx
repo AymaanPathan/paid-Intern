@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import courses from "../Courses/courses";
@@ -8,8 +8,10 @@ import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
 
 import Form from "./Form";
+import { DarkModeContext } from "../../Context/DarkContext";
 
 function CourseDetail() {
+  const { isDark } = useContext(DarkModeContext);
   const { id } = useParams();
   const email = localStorage.getItem("email");
   const course = courses.find((course) => course.id === parseInt(id));
@@ -46,12 +48,12 @@ function CourseDetail() {
   }
 
   return (
-    <div className=" absolute">
-      <div className="bg-[#176CC0]">
+    <div className={`absolute ${isDark && "dark"}  `}>
+      <div className="bg-[#176CC0] dark:bg-gray-900 dark:text-white">
         <Navbar />
       </div>
       {isOpen && <Form isOpen={setIsOpen} />}
-      <div className="w-full py-8">
+      <div className="w-full dark:bg-gray-900  py-8">
         <div className="mx-auto max-w-4xl grid grid-cols-1 lg:grid-cols-2 gap-8 bg-opacity-90 p-6 rounded-lg">
           <div className="relative flex flex-col items-center">
             {!isPlaying && (
@@ -68,21 +70,23 @@ function CourseDetail() {
               className="rounded-lg z-10 cursor-pointer w-full h-fit"
               poster={course.image}
               src={course.video}
-              controls={false} // Hide default controls
+              controls={false}
               onClick={handlePlayPause}
               onLoadedData={handleVideoLoaded}
               onPause={handlePause}
             />
 
-            <span className="mt-12 text-left">Click on Poster For Preview</span>
+            <span className="mt-12 dark:text-white text-left">
+              Click on Poster For Preview
+            </span>
           </div>
 
           <div className="flex flex-col justify-between p-8">
             <div>
-              <h2 className="lg:text-xl text-lg font-extrabold text-gray-800 text-nowrap mb-4">
+              <h2 className="lg:text-xl text-lg font-extrabold dark:text-white text-gray-800 text-nowrap mb-4">
                 {course.name}
               </h2>
-              <p className="text-gray-700  mb-6 lg:text-xl text-md">
+              <p className="text-gray-700 dark:text-gray-400   mb-6 lg:text-sm text-md">
                 {course.description}
               </p>
               <div className="grid grid-cols-1 gap-4 items-center justify-between">
@@ -101,10 +105,10 @@ function CourseDetail() {
               </div>
             </div>
             <div className="mt-8">
-              <h3 className="text-xl font-bold text-black mb-4">
+              <h3 className="text-xl dark:text-white font-bold text-black mb-4">
                 What You Will Learn
               </h3>
-              <ul className="list-disc list-inside text-gray-700 space-y-2">
+              <ul className="list-disc text-xs dark:text-white list-inside text-gray-700 space-y-2">
                 {course.whatyouLearn.map((item, index) => (
                   <li key={index}>{item}</li>
                 ))}

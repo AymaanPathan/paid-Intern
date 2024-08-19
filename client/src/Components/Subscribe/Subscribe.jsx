@@ -25,14 +25,17 @@ function Subscribe() {
 
     try {
       toast.loading("Sending Mail...");
-      const response = await fetch("http://localhost:3000/sendmail", {
-        method: "POST",
-        headers: {
-          token: localStorage.getItem("token"),
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email }),
-      });
+      const response = await fetch(
+        "https://paid-intern-backend-1.onrender.com/sendmail",
+        {
+          method: "POST",
+          headers: {
+            token: localStorage.getItem("token"),
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email }),
+        }
+      );
 
       if (response.ok) {
         toast.dismiss();

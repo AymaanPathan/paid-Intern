@@ -33,7 +33,7 @@ function Contact() {
     try {
       toast.loading("Please Wait...");
       const response = await fetch(
-        "http://localhost:3000/sendContactUsMessage",
+        "https://paid-intern-backend-1.onrender.com/sendContactUsMessage",
         {
           method: "POST",
           headers: {
