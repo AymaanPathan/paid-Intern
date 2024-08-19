@@ -43,7 +43,7 @@ MindUp is an online learning platform where users can enroll in various courses 
 
 3. install vite:
     ```bash
-      npm i vite
+    npm i vite
     ```
 4. run vite
    ````bash
