@@ -1,4 +1,5 @@
-<img width="946" alt="Screenshot 2024-08-11 104957" src="https://github.com/user-attachments/assets/d9eaa8c6-e45a-4869-9dee-52e65c739bb2">
+
+<img width="946" alt="Screenshot 2024-08-19 163530" src="https://github.com/user-attachments/assets/3c5116d7-a5dc-45e0-b4c2-a03cf2a1aedc">
 
 <h1>MindUp - Online Learning Platform</h1>
 
