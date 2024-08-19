@@ -24,17 +24,19 @@ MindUp is an online learning platform where users can enroll in various courses 
 ### Prerequisites
 - Node.js and npm installed on your machine.
 
-# Install backend dependencies
-cd backend
-npm install
+1. Navigate to the backend directory:
 
-# Install frontend dependencies
-cd ../frontend
-npm install
+    ```bash
+    cd backend
+    ```
 
+2. run backend:
 
-cd backend
-npm run start
+    ```bash
+    npm run start
+    ```
 
-cd frontend
-npm run dev
+3. Navigate to the frontend directory:
+    ```bash
+   cd client
+    ```
