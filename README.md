@@ -40,3 +40,13 @@ MindUp is an online learning platform where users can enroll in various courses 
     ```bash
    cd client
     ```
+
+3. install vite:
+    ```bash
+      npm i vite
+    ```
+4. run vite
+   ````bash
+   npm run dev
+   ````
+    
